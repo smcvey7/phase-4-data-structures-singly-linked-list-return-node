@@ -8,7 +8,18 @@ class LinkedList
   end
 
   def nth_from_end(n)
-    # your code here
+    if n < 1 || head == nil
+      return nil
+    end
+    test = head
+    array = []
+    until test.next_node == nil
+      array << test
+      test = test.next_node
+    end
+    array << test
+    
+    array[-n] ? array[-n].value : nil
   end
 
 end
